@@ -1,0 +1,20 @@
+# config.yaml
+# ----
+# The arguments for the Main.py program are read from this file.
+# ----
+
+ET:
+  initial_step: 25000
+  step: 10000
+  stop: False
+  stop_samples: 2000
+  random_state: 42
+ETU:
+  initial_step: 25000
+  step: 10000
+  stop: False
+  stop_samples: 2000
+DSH:
+  path: "C:\\Users\\34640\\Documents\\Python_VSCode\\TFG_DecisionTree\\unswnb15"
+DS:
+  path: "C:\\Users\\34640\\Documents\\Python_VSCode\\TFG_DecisionTree\\unswnb15_old"
