@@ -46,15 +46,15 @@ def main():
     #ds = DS.Dataset(config['DS']['path'])
     ds = DSH.DatasetHeader(config['DSH']['path'])
 
-    """et = ET.EatingTree(config['ET']['initial_step'], 
+    et = ET.EatingTree(config['ET']['initial_step'], 
                        config['ET']['step'], 
                        config['ET']['stop'], 
                        config['ET']['stop_samples'], 
-                       ds.X_train, ds.y_train, ds.X_test, ds.y_test, random_state=config['ET']['random_state'])"""
+                       ds.X_train, ds.y_train, ds.X_test, ds.y_test, random_state=config['ET']['random_state'])
     
-    #execute_eat_and_save_results(et)
+    execute_eat_and_save_results(et)
 
-    #plotGraphic()
+    plotGraphic()
 
 
 if __name__ == "__main__":
