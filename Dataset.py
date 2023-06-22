@@ -16,6 +16,19 @@ class Dataset:
         print("\n==== y_train: ====\n\n", self.y_train)
         print("\n==== X_test: ====\n\n", self.X_test)
         print("\n==== y_test: ====\n\n", self.y_test)
+        classes = pd.unique(self.y_test)
+        print("Classes: ", classes)
+        print("Number of classes: ", len(classes))
+        print("Number of samples in test: ", len(self.y_test))
+        print("Number of samples in train: ", len(self.y_train))
+        #Numero de muestras que pertenecen a cada clase en test
+        print("Number of samples per class in test: ", self.y_test.value_counts())
+        #Numero de muestras que pertenecen a cada clase en porcentaje en test
+        print("Number of samples per class in percentage in test: ", self.y_test.value_counts(normalize=True))
+        #Numero de muestras que pertenecen a cada clase en train
+        print("Number of samples per class in train: ", self.y_train.value_counts())
+        #Numero de muestras que pertenecen a cada clase en porcentaje en train
+        print("Number of samples per class in percentage in train: ", self.y_train.value_counts(normalize=True))
 
 
     def _loadDataBinary(self, path):
@@ -40,7 +53,6 @@ class Dataset:
         self.y_train = train['attack_cat']
         self.X_test = test.drop(['attack_cat', 'label', 'id', 'service', 'proto', 'state'], axis=1)
         self.y_test = test['attack_cat']
-
 
     """
     The data is reescaled or normalized because there are some columns with great values around 1 million and some of them with
